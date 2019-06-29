@@ -1,5 +1,5 @@
 FROM ruby:2.6.3
-MAINTAINER phucdo@teqnological.asia
+MAINTAINER dduyphuc@gmail.com
 
 RUN apt-get update \
   && apt-get install -y \
