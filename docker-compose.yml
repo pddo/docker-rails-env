@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  rails:
+    tty: true
+    stdin_open: true
+    image: rails-demo
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./work:/work
+    network_mode: host

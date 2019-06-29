@@ -1,0 +1,36 @@
+#+STARTUP: indent
+* Build env
+#+begin_src shell
+docker-compose build
+#+end_src
+
+* Start a new rails app
+Open a bash session with docker env
+#+begin_src shell
+docker-compose run --rm --service-ports rails bash
+#OR
+./start_rails_env.sh
+#+end_src
+
+Create new app
+#+begin_src shell
+rails new demo
+#+end_src
+
+Start 
+#+begin_src shell
+rails s
+#+end_src
+
+Open http://localhost:3000
+
+* Scaffold a model for actions
+#+begin_src shell
+rails g scaffold Product name:string sku:string image:string desc:text price:float
+rake db:migrate
+#+end_src
+
+Open http://localhost:3000/products
+
+* Show pre-built project with beautiful html pages
+EStoreRails
