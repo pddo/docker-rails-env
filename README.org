@@ -32,5 +32,3 @@ rake db:migrate
 
 Open http://localhost:3000/products
 
-* Show pre-built project with beautiful html pages
-EStoreRails
