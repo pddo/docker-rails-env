@@ -5,7 +5,7 @@ docker-compose build
 #+end_src
 
 * Start a new rails app
-Open a bash session with docker env with port mapping to
+Open a bash session by Docker env including port mappings
 #+begin_src shell
 docker-compose run --rm --service-ports rails bash
 #OR
@@ -35,8 +35,8 @@ rails s
 Open http://localhost:3000/products
 
 * NOTE about default root user
-Because Docker env use root user as default, so all generated files will be created under root permissions.
-We should `chown` to have ability editing files outside container, with host's editor/IDE
+Because Docker env uses root as default user, so all generated files will be created under root permissions.
+We should ~chown~ to have ability editing files outside container, with host's editor/IDE
 
 #+begin_src shell
 # From host terminal

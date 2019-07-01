@@ -11,7 +11,7 @@ RUN apt-get update \
 RUN mkdir -p /work
 WORKDIR /work
 
-# Add latest gems which required for new Rails app
+# Add latest gems required for new Rails app
 COPY Gemfile ./
 RUN gem install bundler && bundle install --jobs 20 --retry 5
 
