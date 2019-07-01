@@ -5,7 +5,7 @@ docker-compose build
 #+end_src
 
 * Start a new rails app
-Open a bash session with docker env
+Open a bash session with docker env with port mapping to
 #+begin_src shell
 docker-compose run --rm --service-ports rails bash
 #OR
@@ -17,8 +17,9 @@ Create new app
 rails new demo
 #+end_src
 
-Start 
+Start
 #+begin_src shell
+cd demo
 rails s
 #+end_src
 
@@ -28,7 +29,19 @@ Open http://localhost:3000
 #+begin_src shell
 rails g scaffold Product name:string sku:string image:string desc:text price:float
 rake db:migrate
+rails s
 #+end_src
 
 Open http://localhost:3000/products
 
+* NOTE about default root user
+Because Docker env use root user as default, so all generated files will be created under root permissions.
+We should `chown` to have ability editing files outside container, with host's editor/IDE
+
+#+begin_src shell
+# From host terminal
+sudo chown -R $USER:$USER demo
+
+# Or inside docker bash env
+chown -R 1000:1000 demo # 1000 is default user ID on Ubuntu, replace it with yours
+#+end_src

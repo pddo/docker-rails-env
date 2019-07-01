@@ -6,8 +6,10 @@ services:
     stdin_open: true
     image: rails-demo
     build: .
-    ports:
-      - "3000:3000"
     volumes:
       - ./work:/work
+    #`ports` option has no effect with `network_mode`
+    #interchange them as your need
     network_mode: host
+    # ports:
+    #   - "3000:3000"
