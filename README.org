@@ -27,7 +27,9 @@ Open http://localhost:3000
 
 * Demo
 ** Add a static page to /public
-Copy all from =materials/01-static-pages/= to rails =/public= folder
+Go and see static pages in =materials/01-static-pages/=
+
+Add to Rails app by copying all from =materials/01-static-pages/= to rails =/public= folder
 
 #+begin_src shell
 # stand at demo rails folder, outside docker env
@@ -59,7 +61,6 @@ Reload =store/list= page
 ** Config root path to =store/list=
 Go to =config/routes=
 Add this line
-
 #+begin_src ruby
 root to: 'store#list'
 #+end_src
@@ -82,7 +83,7 @@ Go to =app/views/store/list.html.erb=
 
 Go to section =<!-- Start Best Seller -->=
 
-Add this block inside div#row
+Add this block inside =div#row=
 
 #+begin_src html
 <% @products.each do |product| %>
